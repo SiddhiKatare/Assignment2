@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
+      rel="stylesheet"
+    />
+    <title>{%NAME%} {%IMAGE%} /// Course List</title>
+
+    <style>
+      html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 5rem 5rem 5rem;
+        line-height: 1.7;
+        font-family: 'Nunito Sans', sans-serif;
+        color: rgb(31, 15, 95);
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #40519d, #695595);
+      }
+
+      h1 {
+        font-family: 'Megrim', sans-serif;
+        font-size: 6rem;
+        color: rgb(179, 137, 137);
+        text-align: center;
+        position: relative;
+        word-spacing: 3px;
+      }
+      .container {
+        width: 95rem;
+        margin: 0 auto;
+      }
+      .course {
+        width: 60rem;
+        margin: 0 auto;
+        margin-top: 9rem;
+        background: white;
+        box-shadow: 0 3rem 6rem 1rem rgba(177, 5, 5, 0.2);
+        position: relative;
+      }
+      .course__back:link,
+      .course__back:visited {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        z-index: 1000;
+        color: rgb(159, 109, 109);
+        background-color: white;
+        box-shadow: 0 1rem 3rem rgba(207, 178, 178, 0.3);
+        border-radius: 100rem;
+        padding: 0 2rem;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+      }
+      .course__back:hover,
+      .course__back:active {
+        background-color: #6aa66a;
+      }
+      .course__name {
+        background: linear-gradient(to bottom, #65913f, #00e3ae);
+        padding: 1rem;
+        font-family: 'Megrim', sans-serif;
+        font-size: 4rem;
+        color: white;
+        text-align: center;
+        word-spacing: 2px;
+      }
+      .course__info {
+        padding: 2rem 2rem;
+        font-size: 1.6rem;
+        line-height: 1.8;
+      }
+      .course__link:link,
+      .course__link:visited {
+        display: block;
+        background-color: #0e5d0f;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem;
+        text-align: center;
+        transform: scale(1.07) skewX(-20deg);
+        box-shadow: 0 2rem 6rem rgba(184, 87, 87, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .emoji-left {
+        font-size: 2rem;
+        margin-right: 1rem;
+      }
+      .emoji-right {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+    </style>
+  </head>
+
+
+
+
+
+
+
+
+
+<body>
+  <h1>CALCULATING THE LOAN AMMOUNT </h1>
+  <table>
+    <tr>
+      <td><label>PRINCIPLE</label></td>
+      <td><input name="p" type="number" value="5000"></td>
+    </tr>
+    <tr>
+      <td><label>TIME PERIOD</label></td>
+      <td><input type="number" name="t" value="2"></td>
+    </tr>
+    <tr>
+      <td><label>RATE OF INTEREST</label></td>
+      <td><input type="number" name="r" value="11.7"></td>
+    </tr>
+    <tr>
+      <td><label>INTEREST</label></td>
+      <td><input type="number" name="i" value="0"></td>
+    </tr>
+    
+    <tr>
+      <td><label id="amount">CLICK ON CALCULATE</label></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="Calculate" onClick="getAmount()"></td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+    const amount = document.getElementById("amount")
+
+
+    function getAmount() {
+      const p = document.getElementsByName("p")[0].value
+      const r = document.getElementsByName("r")[0].value
+      const t = document.getElementsByName("t")[0].value
+      const i = document.getElementsByName("i")[0].value//checked ? 0 : 1
+      console.log(p)
+      console.log(r)
+      console.log(t)
+      console.log(i)
+
+      let a = 0
+
+        a = t * (1 + (p * r / 100))
+     
+      amount.innerHTML = `Loan Amount is ${a}`
+
+    }
+
+
+  </script>
+</body>
+
+</html>
